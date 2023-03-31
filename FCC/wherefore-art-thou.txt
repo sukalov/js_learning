@@ -1,0 +1,15 @@
+function whatIsInAName(collection, source) {
+  let arr = []
+  for (let obj in collection) {
+    let match = true
+    for (let objS in source){
+    if (collection[obj][objS] !== source[objS]){
+      match = false
+    }
+    }
+    if (match) arr.push(collection[obj])
+  }
+  return (arr)
+}
+
+console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }))

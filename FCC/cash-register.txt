@@ -1,0 +1,56 @@
+const money = {
+  PENNY: 1,
+  NICKEL: 5,
+  DIME: 10,
+  QUARTER: 25,
+  ONE: 100,
+  FIVE: 500,
+  TEN: 1000,
+  TWENTY: 2000,
+  'ONE HUNDRED': 10000
+}
+
+function checkCashRegister(price, cash, cid) {
+  const safeCID = JSON.parse(JSON.stringify(cid));
+  price = price * 100;
+  cash = cash * 100
+
+  for (let coin in cid) {
+    cid[coin][1] = cid[coin][1]*100
+  } // NOT TO DEAL WITH FLOATING POINTS ANYMORE
+
+  let change = cash - price;
+  const result = {}
+  result.change = []
+  let doWeHaveMoney = false;
+  for (let i = cid.length-1; i>=0; i--) {
+    // console.log('===', cid[i][0], change)
+    let current = 0;
+    while (
+      money[cid[i][0]] <= change &&
+      cid[i][1] > 0) {
+        cid[i][1] = cid[i][1] - money[cid[i][0]]
+        change -= money[cid[i][0]]
+        current += money[cid[i][0]]
+      }
+    if (current != 0) result.change.push([cid[i][0], current]);
+    if (cid[i][1] != 0) doWeHaveMoney = true;
+  }
+
+  for (let coin in result.change) {
+      result.change[coin][1] = result.change[coin][1]/100
+    }
+    
+  if (change != 0) {
+    result.status = "INSUFFICIENT_FUNDS";
+    result.change = []
+  } else if (!doWeHaveMoney){
+    result.status = 'CLOSED';
+    result.change = safeCID
+  }
+  else result.status = 'OPEN'
+
+  return result;
+}
+
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));

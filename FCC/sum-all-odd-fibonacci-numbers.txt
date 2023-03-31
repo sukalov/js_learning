@@ -1,0 +1,13 @@
+function sumFibs(num) {
+  let fib = [0, 1]
+  while (fib[fib.length-1] <= num) {
+    fib.push(fib[fib.length-1] + fib[fib.length-2])
+  }
+  fib.pop()
+  return fib.reduce((sum, i) => {
+    i % 2 == 1 ? sum += i : sum = sum
+    return sum
+  });
+}
+
+console.log(sumFibs(8));

@@ -1,0 +1,16 @@
+function smallestCommons(arr) {
+  arr.sort((a, b) => a - b)
+  let n = 1
+  let common = arr[0] * arr[1] * n
+  while (true) {
+    common = arr[0] * arr[1] * n
+    n++
+    let isCommon = true
+    for (let j=arr[1]; j >=arr[0]; j--) {
+      if (common % j != 0) isCommon = false
+    }
+    if (isCommon) return common
+  }
+}
+
+console.log(smallestCommons([1,5]))

@@ -1,0 +1,8 @@
+function spinalCase(str) {
+  return str.replace(/([A-Z])/g, ' ' + '$1')
+            .trim()
+            .replace(/[\W|_]+/g, '-')
+            .toLowerCase()
+}
+
+console.log(spinalCase("The_Andy_Griffith_Show"))
