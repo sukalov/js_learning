@@ -1,0 +1,15 @@
+function orbitalPeriod(arr) {
+  let results = []
+  for (let obj in arr) {
+    const GM = 398600.4418;
+    const earthRadius = 6367.4447;
+    let result = {name: arr[obj].name}
+
+    let t = (Math.PI * 2) * Math.sqrt(Math.pow(arr[obj].avgAlt + earthRadius, 3) / GM)
+    result.orbitalPeriod = Math.round(t)
+    results.push(result)
+  }
+  return results;
+}
+
+console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]))

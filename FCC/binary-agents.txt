@@ -1,0 +1,20 @@
+function binaryAgent(str) {
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  const dictionary = {' ': ' ', '00100111': "'", '00100000':'_', '00100001':'!', '00111111':'?'}
+  for (let i = 1; i <= alphabet.length; i++) {
+    let binary = i.toString(2)
+    while (binary.length < 5) {
+      binary = '0' + binary
+    }
+    dictionary['011' + binary] = alphabet[i-1]
+    dictionary['010' + binary] = alphabet[i-1].toUpperCase()
+  }
+  // console.log(dictionary)
+
+  return str.split(' ')
+            .map(el => dictionary[el])
+            .join('')
+            .replace(/_/g, ' ')
+}
+
+console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"))
