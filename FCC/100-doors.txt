@@ -1,0 +1,20 @@
+function getFinalOpenedDoors(numDoors) {
+  let arr = []
+  for (let k = 0; k < numDoors; k++) {
+    arr.push(false)
+  }
+  let i = 0;
+
+  while (i < numDoors) {
+    for (let j = i; j < arr.length; j+=(i+1)) {
+        arr[j] = !arr[j]
+      }
+    i++
+  }
+return arr.map((el, i) => {
+  if (el) return i + 1
+  }).filter(e => e)
+  }
+
+
+console.log(getFinalOpenedDoors(10))
