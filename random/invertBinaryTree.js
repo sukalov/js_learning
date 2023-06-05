@@ -20,7 +20,7 @@ let tree = {
             }
         },
     right :{
-        left: 'right',
+        left: 'hello VIM',
         right: {}
     }
 }
@@ -46,18 +46,4 @@ _ _ _ _ _ _ _ _ _ _
 
 */
 
-function cas() {
-    let a = 100
-    let b = a
-    let counter = 0
-    while (a > 1) {
-        a = a - (a * .2)
-        b += a
-        counter += 1
-        console.log(a*.8)
-    }
 
-    return [b, counter]
-}
-
-console.log(cas())

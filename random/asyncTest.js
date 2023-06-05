@@ -15,15 +15,6 @@ const call = () => {
     asyncTest()
 }
 
-function doItSlow() {
-    return new Promise(resolve => {
-      setTimeout( () => {
-        console.log( "resolving" );
-        resolve();
-      }, 1000 );
-     }); 
-   }
-
 console.log(1)
 call()
 console.log(2)
