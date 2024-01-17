@@ -1,0 +1,15 @@
+function digitFibonacci(n) {
+  let currentDigits = '1'
+  let numOne = 1
+  let numTwo = 1
+  let i
+  for (i = 2; currentDigits.length < n; i++) {
+    const newNumOne = numTwo  
+    numTwo += numOne
+    numOne = newNumOne
+    currentDigits = String(numTwo)
+  }
+  return i;
+}
+
+console.log(digitFibonacci(5))

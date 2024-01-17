@@ -8,5 +8,14 @@ for (let i = 0; i < 100; i++) {
 let d = c.join('').replace(/\s+/g, ' ')
 console.log(d)
 
-const text = `The sun cast its warm golden rays over the tranquil meadow, painting the surrounding landscape with a soft glow. A gentle breeze rustled through the tall grass, causing it to sway in a mesmerizing dance. Birds chirped melodiously, their sweet songs filling the air with a symphony of nature's music. In the distance, a river meandered gracefully, its crystal-clear waters glistening under the sunlight. It was a moment of serene beauty, a snapshot `
-console.log(text.replace(/[^asdfghjkl\s]*/gmi, ''))
+const text2 = `A fierce jerk fired the gun, her fury echoing through the rugged cliffs. The frightened kid urged quick 
+escape, darting through the narrow bushes. Red sparks flickered, triggering a surge of adrenaline in the hardened fugitive. Judging the risk, he leaped over a sturdy hurdle, defying gravity. His quick reflexes guided him, ensuring safe jumps over the hazardous terrain. A rugged figure emerged, his jerky movements hinting at concealed secrets. A fragile deer hesitated, its delicate frame juxtaposed with the harsh surroundings. The fugitive's heart raced, his instincts kicking into high gear. He ducked behind a thick hedge, hiding from the pursuing forces. A jerk of the head, a fleeting glance, and he vanished into the dense thicket.`
+const text = `A jar of sugar sat on the desk, while the fragile rug lay askew on the floor. A sleek red jeep raced 
+through the dark, headlights flashing. The skier's gear clanked as he leaped off the jagged ledge, hurtling through 
+the air. A joyful shriek escaped his lips as he landed safely on the frozen lake. The larks sang their melodious 
+tunes, filling the air with harmonious melodies. A feral dog howled in the distance, its eerie cry echoing through 
+the night. A judge presided over the court, gavel in hand, delivering a stern ruling. The aged tree stood tall, its 
+branches reaching towards the sky, a sanctuary for birds. A fearless hiker trekked through the dense jungle, 
+navigating the treacherous terrain. The eerie fog engulfed the landscape, creating an ethereal atmosphere.`
+ 
+console.log(text.replace(/[^dkrueifghj\s]*/gmi, ''))
